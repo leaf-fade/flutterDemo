@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class ScrollWidget extends StatelessWidget {
@@ -23,7 +23,6 @@ class _ScrollWidgetDemoState extends State<ScrollWidgetDemo> {
         print(_controller.offset); //打印滚动位置
       }
     );
-
     super.initState();
   }
 
@@ -87,11 +86,8 @@ class _SingleChildViewport extends SingleChildRenderObjectWidget {
 * */
 class _RenderChildViewport extends RenderBox with RenderObjectWithChildMixin<RenderBox>{
   _RenderChildViewport({
-  @required ViewportOffset offset,
-  RenderBox child,
-  }):_offset = offset{
-    this.child = child;
-  }
+    @required ViewportOffset offset,
+  }):_offset = offset;
 
   ViewportOffset _offset;
   ViewportOffset get offset => _offset;

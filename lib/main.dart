@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:event_bus/event_bus.dart';
 import 'package:flutter_app/animator/contain.dart';
 import 'package:flutter_app/base/contain.dart';
+import 'package:flutter_app/custom/contain.dart';
 import 'package:flutter_app/scroll/contain.dart';
+import 'package:flutter_app/special/contain.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: MainPage()
       );
@@ -25,18 +28,18 @@ class MainPage extends StatelessWidget {
         appBar: AppBar(
           title: Text("flutter"),
         ),
-        body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                    child: Text("基础控件"),
-                    onPressed: (){
-                      //基础路由调用
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BaseWidgetContain()));
-                    }
-                ),
-                RaisedButton(
+        body:Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                  child: Text("基础控件"),
+                  onPressed: (){
+                    //基础路由调用
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BaseWidgetContain()));
+                  }
+              ),
+              RaisedButton(
                   child: Text("动画"),
                   onPressed: (){
                     //路由自定义动画,改为左边进入
@@ -47,16 +50,30 @@ class MainPage extends StatelessWidget {
                         )
                     ));
                   }
-                ),
-                RaisedButton(
-                    child: Text("滚动控件"),
-                    onPressed: (){
-                      //基础路由调用
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScrollWidgetContain()));
-                    }
-                ),
-              ],
-            )
+              ),
+              RaisedButton(
+                  child: Text("滚动控件"),
+                  onPressed: (){
+                    //基础路由调用
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScrollWidgetContain()));
+                  }
+              ),
+              RaisedButton(
+                  child: Text("特殊控件"),
+                  onPressed: (){
+                    //基础路由调用
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SpecialWidgetContain()));
+                  }
+              ),
+              RaisedButton(
+                  child: Text("自绘控件"),
+                  onPressed: (){
+                    //基础路由调用
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomContain()));
+                  }
+              ),
+            ],
+          ),
         )
     );
   }

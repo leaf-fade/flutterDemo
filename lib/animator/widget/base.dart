@@ -141,6 +141,7 @@ class _AnimatedBuilderWidgetState extends State<AnimatedBuilderWidget> with Sing
     _size = Tween(begin: 25.0, end:50.0).animate(
         CurvedAnimation(parent: _controller, curve: Interval(0.2, 1.0,curve: Curves.linear))
     );
+
     super.initState();
   }
 
