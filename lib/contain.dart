@@ -17,7 +17,10 @@ class BaseContain extends StatelessWidget{
         child: Scaffold(
             appBar: AppBar(
               title: Text(title),
-              bottom: TabBar(tabs: barList),
+              bottom: TabBar(
+                tabs: barList,
+                isScrollable: true, 
+              ),
             ),
             body: TabBarView(children: barViewList)
         ));
