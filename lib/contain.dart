@@ -10,6 +10,7 @@ class BaseContain extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    Contain.clear();
     List<Widget> barViewList = List.generate(barList.length,(index)=>Contain(index,viewList));
 
     return DefaultTabController(
@@ -32,6 +33,11 @@ class BaseContain extends StatelessWidget{
 * */
 class Contain extends Center{
   static final Map<int, Contain> _map =  <int, Contain>{};
+  
+  static clear(){
+    _map.clear();
+  }
+  
   factory Contain(int type,List<Widget> viewList){
     if(_map.containsKey(type)){
       return _map[type];
